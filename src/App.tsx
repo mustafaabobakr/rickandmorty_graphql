@@ -1,26 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { memo } from "react";
+
+import { useQuery } from "@apollo/client";
+import { GET_CHARACTERS } from "./graphql";
+
+import { CharacterList, SkeletonList } from "@components";
+import { CharactersResponse } from "@types";
+//
+import "./App.css";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const { loading, error, data } = useQuery<CharactersResponse>(GET_CHARACTERS);
+
+	if (loading) return <SkeletonList numberOfItems={20} />;
+	if (error) return <p>Error : {error.message}</p>;
+	if (!data) return <p>API is Empty</p>;
+
+	const { characters } = data;
+	console.log("data:", data);
+
+	return (
+		<>
+			<header></header>
+			<main>
+				<CharacterList characters={characters.results} />
+			</main>
+			<footer></footer>
+		</>
+	);
 }
 
-export default App;
+export default memo(App);
