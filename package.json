@@ -24,6 +24,8 @@
 		"web-vitals": "^2.1.4"
 	},
 	"scripts": {
+		"codegen": "graphql-codegen --config codegen.ts",
+		"prestart": "yarn codegen",
 		"start": "craco start",
 		"build": "craco build",
 		"test": "react-scripts test",
@@ -50,7 +52,12 @@
 	"devDependencies": {
 		"@craco/craco": "^7.0.0",
 		"@graphql-codegen/cli": "^2.16.1",
+		"@graphql-codegen/client-preset": "^1.2.3",
+		"@graphql-codegen/introspection": "2.2.3",
+		"@graphql-codegen/typescript-react-apollo": "^3.3.7",
+		"apollo": "^2.34.0",
 		"craco-alias": "^3.0.1",
+		"graphql-codegen-typescript-react-apollo": "^0.18.2",
 		"tsconfig-paths": "^4.1.1",
 		"typescript-plugin-css-modules": "^4.1.1"
 	}

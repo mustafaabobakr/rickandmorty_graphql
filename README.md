@@ -1,5 +1,7 @@
 # Rick and Morty GraphQL React App
 
+[API Docs](https://rickandmortyapi.com/documentation/)
+
 ## Available Scripts
 
 In the project directory, you can run:
