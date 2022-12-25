@@ -2306,3 +2306,10 @@ export type GetCharactersQueryVariables = Exact<{
 
 
 export type GetCharactersQuery = { __typename?: 'Query', characters?: { __typename?: 'Characters', info?: { __typename?: 'Info', count?: number, pages?: number, next?: number, prev?: number }, results?: Array<{ __typename?: 'Character', id?: string, name?: string, status?: string, species?: string, type?: string, gender?: string, image?: string, created?: string, episode: Array<{ __typename?: 'Episode', id?: string, name?: string, air_date?: string, episode?: string, created?: string }>, origin?: { __typename?: 'Location', name?: string, type?: string, dimension?: string }, location?: { __typename?: 'Location', name?: string, type?: string, dimension?: string } }> } };
+
+export type GetSingleCharacterQueryVariables = Exact<{
+  id: Scalars['ID'];
+}>;
+
+
+export type GetSingleCharacterQuery = { __typename?: 'Query', character?: { __typename?: 'Character', id?: string, name?: string, image?: string, status?: string, species?: string, type?: string, gender?: string, episode: Array<{ __typename?: 'Episode', id?: string, name?: string, air_date?: string, episode?: string, created?: string }>, origin?: { __typename?: 'Location', name?: string, type?: string, dimension?: string }, location?: { __typename?: 'Location', name?: string, type?: string, dimension?: string } } };

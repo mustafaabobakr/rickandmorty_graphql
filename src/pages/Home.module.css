@@ -1,5 +1,5 @@
 
-.App-header {
+.Home-header {
   min-height: 100px;
   display: flex;
   align-items: center;
@@ -7,7 +7,7 @@
   font-size: calc(10px + 2vmin);
 }
 
-.App-page {
+.Home-page {
   cursor: default;
   user-select: none;
   color: #61dafb;
@@ -15,21 +15,13 @@
   text-align: center;
 }
 
-.App-main {
+.Home-main {
   padding-block: 50px;
 }
 
-.App-footer {
+.Home-footer {
   min-height: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }

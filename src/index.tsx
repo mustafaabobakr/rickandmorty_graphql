@@ -1,10 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { ApolloProvider } from "@apollo/client";
 import CssBaseline from "@mui/material/CssBaseline";
 import { ThemeProvider } from "@mui/material/styles";
 import { client } from "./graphql";
-import App from "./App";
+import Router from "./router/Router";
 //
 import theme from "./theme";
 import "./index.css";
@@ -15,7 +16,7 @@ root.render(
 		<ApolloProvider client={client}>
 			<ThemeProvider theme={theme}>
 				<CssBaseline />
-				<App />
+				<RouterProvider router={Router} />
 			</ThemeProvider>
 		</ApolloProvider>
 	</React.StrictMode>
