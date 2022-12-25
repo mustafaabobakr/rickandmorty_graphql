@@ -11,7 +11,7 @@ const SkeletonList: React.FC<SkeletonListProps> = ({ numberOfItems, width, heigh
 	return (
 		<section className={styles["container"]}>
 			{[...Array(numberOfItems)].map((_, i) => (
-				<Skeleton key={i} variant="rectangular" width={width} height={height} />
+				<Skeleton key={i} variant="rectangular" width={width} height={height} sx={{ borderRadius: "4px" }} />
 			))}
 		</section>
 	);

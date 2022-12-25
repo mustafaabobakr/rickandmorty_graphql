@@ -64,11 +64,7 @@ function Home() {
 				</Stack>
 			</header>
 			<main className={styles["Home-main"]}>
-				{!data || loading ? (
-					<SkeletonList numberOfItems={20} />
-				) : (
-					<CharacterList characters={data.characters?.results} />
-				)}
+				{loading ? <SkeletonList numberOfItems={20} /> : <CharacterList characters={data.characters?.results} />}
 			</main>
 			<footer className={styles["Home-footer"]}>
 				<Stack spacing={2}>
