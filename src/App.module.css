@@ -1,6 +1,6 @@
 
 .App-header {
-  min-height: 80px;
+  min-height: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -19,6 +19,12 @@
   padding-block: 50px;
 }
 
+.App-footer {
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
