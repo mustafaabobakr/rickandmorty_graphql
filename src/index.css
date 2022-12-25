@@ -26,6 +26,17 @@ code {
     monospace;
 }
 
+/* reset link styles */
+a {
+  -webkit-user-drag: none;
+  text-decoration: none;
+  color: inherit;
+}
+a:active {
+  color: inherit;
+  text-decoration: none;
+}
+
 
 /* select class starts with ReactRibbons of Dead character status */
 [class^="ReactRibbons"] {

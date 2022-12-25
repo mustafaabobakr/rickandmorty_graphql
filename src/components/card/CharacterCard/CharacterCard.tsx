@@ -1,7 +1,7 @@
 import { memo } from "react";
+import { Link } from "react-router-dom";
 import { Card, CardMedia, CardContent, Typography, Chip, CardActions, Button } from "@mui/material";
 import { RibbonContainer, RightCornerLargeRibbon } from "react-ribbons";
-
 import { getCharacterObject } from "@utils";
 import { SingleCharObj } from "@components/list/CharacterList/CharacterList";
 import styles from "./CharacterCard.module.css";
@@ -75,7 +75,9 @@ const CharacterCard: React.FC<CharacterCardProps> = ({ character }) => {
 				</section>
 			</CardContent>
 			<CardActions>
-				<Button size="small">Learn More</Button>
+				<Link to={`character/${id}`}>
+					<Button size="small">Learn More</Button>
+				</Link>
 			</CardActions>
 		</Card>
 	);
