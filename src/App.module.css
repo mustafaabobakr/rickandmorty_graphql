@@ -1,0 +1,29 @@
+
+.App-header {
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+}
+
+.App-page {
+  cursor: default;
+  user-select: none;
+  color: #61dafb;
+  width: 50px;
+  text-align: center;
+}
+
+.App-main {
+  padding-block: 50px;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

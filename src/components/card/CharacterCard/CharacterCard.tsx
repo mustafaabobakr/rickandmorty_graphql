@@ -1,15 +1,17 @@
-import { useState, useEffect, memo } from "react";
+import { memo } from "react";
 import { Card, CardMedia, CardContent, Typography, Chip, CardActions, Button } from "@mui/material";
 import { RibbonContainer, RightCornerLargeRibbon } from "react-ribbons";
-import { Character } from "@types";
 
+import { getCharacterObject } from "@utils";
+import { SingleCharObj } from "@components/list/CharacterList/CharacterList";
 import styles from "./CharacterCard.module.css";
 
 interface CharacterCardProps {
-	character: Character;
+	character: SingleCharObj;
 }
 const CharacterCard: React.FC<CharacterCardProps> = ({ character }) => {
-	const { id, name, created, episode, gender, image, location, origin, species, status, type, url } = character;
+	const { id, name, created, episode, gender, image, location, origin, species, status } =
+		getCharacterObject(character);
 
 	return (
 		<Card key={id} className={styles["card"]}>
@@ -65,10 +67,10 @@ const CharacterCard: React.FC<CharacterCardProps> = ({ character }) => {
 						Appearance {episode.length}
 					</Typography>
 					<Typography variant="body2" color="text.secondary">
-						Origin: {origin.name}
+						Origin: {origin?.name}
 					</Typography>
 					<Typography variant="body2" color="text.secondary">
-						Location: {location.dimension}
+						Location: {location?.dimension}
 					</Typography>
 				</section>
 			</CardContent>
