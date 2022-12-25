@@ -5,7 +5,7 @@ import { GET_CHARACTERS } from "./graphql/CharactersAPI";
 
 import { CharacterList, SkeletonList } from "@components";
 //
-import { Button } from "@mui/material";
+import { Button, Pagination, Stack } from "@mui/material";
 import { GetCharactersQuery, GetCharactersQueryVariables } from "./gql/graphql";
 
 import styles from "./App.module.css";
@@ -20,26 +20,43 @@ function App() {
 
 	if (error) return <p>Error : {error.message}</p>;
 
-	const handlePrev = () => {
-		// prevent negative page
-		if (page > 1) setPage((page) => page - 1);
+	if (!data?.characters?.results) {
+		return (
+			<>
+				<header className={styles["App-header"]}>
+					<Stack spacing={2}>
+						<Pagination shape="rounded" variant="outlined" page={page} count={42} />
+					</Stack>
+				</header>
+				<main className={styles["App-main"]}>
+					<SkeletonList numberOfItems={20} />
+				</main>
+				<footer className={styles["App-footer"]}>
+					<Stack spacing={2}>
+						<Pagination shape="rounded" variant="outlined" page={page} count={42} />
+					</Stack>
+				</footer>
+			</>
+		);
+	}
+
+	const handlePaginationChange = (event: React.ChangeEvent<unknown>, value: number) => {
+		setPage(value);
 	};
 
-	const handleNext = () => {
-		// prevent page > 34
-		if (page < (data?.characters?.info?.pages || 1)) setPage((page) => page + 1);
-	};
 	console.log("characters:", data?.characters);
 	return (
 		<>
 			<header className={styles["App-header"]}>
-				<Button onClick={handlePrev} disabled={!data || page === 1}>
-					Prev
-				</Button>
-				<p className={styles["App-page"]}>{page}</p>
-				<Button onClick={handleNext} disabled={!data || data?.characters?.info?.next === null}>
-					Next
-				</Button>
+				<Stack spacing={2}>
+					<Pagination
+						shape="rounded"
+						variant="outlined"
+						page={page}
+						count={data?.characters?.info?.pages!}
+						onChange={handlePaginationChange}
+					/>
+				</Stack>
 			</header>
 			<main className={styles["App-main"]}>
 				{!data || loading ? (
@@ -48,7 +65,17 @@ function App() {
 					<CharacterList characters={data.characters?.results} />
 				)}
 			</main>
-			<footer></footer>
+			<footer className={styles["App-footer"]}>
+				<Stack spacing={2}>
+					<Pagination
+						shape="rounded"
+						variant="outlined"
+						page={page}
+						count={data?.characters?.info?.pages!}
+						onChange={handlePaginationChange}
+					/>
+				</Stack>
+			</footer>
 		</>
 	);
 }

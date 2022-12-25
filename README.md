@@ -1,6 +1,21 @@
-# Rick and Morty GraphQL React App
+<div align="center">
+  <img src="https://raw.githubusercontent.com/mustafaabobakr/rickandmorty_graphql/master/public/logo.svg" alt="Rick and Morty GraphQL React App" width="300" align="center" />
+</div>
 
-[API Docs](https://rickandmortyapi.com/documentation/)
+<h1 align="center">
+ Rick and Morty GraphQL React App
+</h1>
+
+Hosted on [Cloudflare Pages](https://pages.cloudflare.com/)
+
+[Rick and Morty API Docs](https://rickandmortyapi.com/documentation/)
+
+<br />
+
+<video src="https://user-images.githubusercontent.com/27288406/209465045-104a14af-6880-4f68-a8b3-4e160f445754.mp4"></video>
+
+<br />
+<br />
 
 ## Available Scripts
 
@@ -18,10 +33,4 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 
 ### `yarn run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Builds the app for production to the `build` folder.
