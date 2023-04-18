@@ -3,12 +3,14 @@
 </div>
 
 <h1 align="center">
- Rick and Morty GraphQL React App
+ <a href="https://rickandmorty-graphql.pages.dev" target="_blank">Rick and Morty GraphQL React App</a>
 </h1>
 
-Hosted on [Cloudflare Pages](https://pages.cloudflare.com/)
+👀 | <a href="https://rickandmorty-graphql.pages.dev" target="_blank">Live Link</a>
 
-[Rick and Morty API Docs](https://rickandmortyapi.com/documentation/)
+📡 | Hosted on <a href="https://pages.cloudflare.com/" target="_blank">Cloudflare Pages</a>
+
+📚 | <a href="https://rickandmortyapi.com/documentation/" target="_blank">API Docs</a>
 
 <br />
 
